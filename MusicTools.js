@@ -1,3 +1,8 @@
+let midiPitch = getElementById("midiInput");
+let freq = getElementById("freqInput");
+let dBFS = getElementById("dbfsInput");
+let linear = getElementById("linearInput");
+
 const myMusicTools = {
   midiToFreq: function (midiPitch) {
     return 440 * Math.pow(2, (midiPitch - 69) / 12);
