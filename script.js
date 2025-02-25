@@ -1,12 +1,17 @@
-let midiPitch = document.getElementById("midiInput");
-let freq = document.getElementById("freqInput");
-let dBFS = document.getElementById("dbfsInput");
-let linear = document.getElementById("linearInput");
+import myMusicTools from "./MusicTools.js";
 
-document.getElementById("midiToFreq").addEventListener("click", midiToFreq);
+document
+  .getElementById("midiToFreq")
+  .addEventListener("click", myMusicTools.midiToFreq);
 
-document.getElementById("freqToMidi").addEventListener("click", freqToMidi);
+document
+  .getElementById("freqToMidi")
+  .addEventListener("click", myMusicTools.freqToMidi);
 
-document.getElementById("dbfsToLinear").addEventListener("click", dbfsToLinear);
+document
+  .getElementById("dbfsToLinear")
+  .addEventListener("click", myMusicTools.dbfsToLinear);
 
-document.getElementById("linearToDbfs").addEventListener("click", linearToDbfs);
+document
+  .getElementById("linearToDbfs")
+  .addEventListener("click", myMusicTools.linearToDbfs);

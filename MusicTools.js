@@ -1,15 +1,19 @@
-function midiToFreq() {
-  return 440 * Math.pow(2, (midiPitch - 69) / 12);
-}
+const myMusicTools = {
+  midiToFreq: function (midiPitch) {
+    return 440 * Math.pow(2, (midiPitch - 69) / 12);
+  },
 
-function freqToMidi() {
-  return 69 + 12 * Math.log2(freq / 440);
-}
+  freqToMidi: function (freq) {
+    return 69 + 12 * Math.log2(freq / 440);
+  },
 
-function dbfsToLinear() {
-  return Math.pow(10, dBFS / 20);
-}
+  dbfsToLinear: function (dBFS) {
+    return Math.pow(10, dBFS / 20);
+  },
 
-function linearToDbfs() {
-  return 20 * Math.log10(linear);
-}
+  linearToDbfs: function (linear) {
+    return 20 * Math.log10(linear);
+  },
+};
+
+export default myMusicTools;
