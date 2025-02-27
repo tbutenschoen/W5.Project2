@@ -3,10 +3,11 @@ const myMusicTools = {
   freq: document.getElementById("freqInput"),
   dBFS: document.getElementById("dbfsInput"),
   linear: document.getElementById("linearInput"),
- 
 
   midiToFreq: function (midiPitch) {
-    return 440 * Math.pow(2, (midiPitch - 69) / 12);
+    let midiValue = 440 * Math.pow(2, (midiPitch - 69) / 12);
+    midiValue = parseFloat(midiValue);
+    return midiValue;
   },
 
   freqToMidi: function (freq) {
@@ -18,12 +19,8 @@ const myMusicTools = {
   },
 
   linearToDbfs: function (linear) {
-    return  20 * Math.log10(linear);
+    return 20 * Math.log10(linear);
   },
-
-  
-
-  
 };
 
 export default myMusicTools;
