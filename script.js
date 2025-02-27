@@ -1,17 +1,34 @@
 import myMusicTools from "./MusicTools.js";
 
-document
-  .getElementById("midiToFreq")
-  .addEventListener("click", myMusicTools.midiToFreq);
+//number typed in, do the math, display result
+const mToF = function () {
+  let midiInput = document.getElementById("midiInput").value;
+  let freqResult = myMusicTools.midiToFreq(midiInput);
+  document.getElementById("freqResult").innerText = freqResult;
+};
 
-document
-  .getElementById("freqToMidi")
-  .addEventListener("click", myMusicTools.freqToMidi);
+const fToM = function () {
+  let freqInput = document.getElementById("freqInput").value;
+  let midiResult = myMusicTools.freqToMidi(freqInput);
+  document.getElementById("midiResult").innerText = midiResult;
+};
 
-document
-  .getElementById("dbfsToLinear")
-  .addEventListener("click", myMusicTools.dbfsToLinear);
+const dToL = function () {
+  let dbfsInput = document.getElementById("dbfsInput").value;
+  let linearResult = myMusicTools.dbfsToLinear(dbfsInput);
+  document.getElementById("linearResult").innerText = linearResult;
+};
 
-document
-  .getElementById("linearToDbfs")
-  .addEventListener("click", myMusicTools.linearToDbfs);
+const lToD = function () {
+  let linearInput = document.getElementById("linearInput").value;
+  let dbfsResult = myMusicTools.linearToDbfs(linearInput);
+  document.getElementById("dbfsResult").innerText = dbfsResult;
+};
+
+document.getElementById("midiToFreq").addEventListener("click", mToF);
+
+document.getElementById("freqToMidi").addEventListener("click", fToM);
+
+document.getElementById("dbfsToLinear").addEventListener("click", dToL);
+
+document.getElementById("linearToDbfs").addEventListener("click", lToD);
